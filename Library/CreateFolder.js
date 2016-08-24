@@ -31,3 +31,6 @@ var DefaultFolderNameCheck = function(rootFolder){
 
 	return tempFolderName;
 };
+
+
+// lorenzo's comment
