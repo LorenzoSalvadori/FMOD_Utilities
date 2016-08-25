@@ -1,5 +1,5 @@
 studio.menu.addMenuItem({
-    name: "CreateEvent",
+    name: "Shortcuts\\CreateEvent",
     keySequence: "Ctrl+Alt+E",
     execute: function() {
     	CreateEvent();

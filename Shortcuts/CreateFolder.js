@@ -1,5 +1,5 @@
 studio.menu.addMenuItem({
-    name: "CreateFolder",
+    name: "Shortcuts\\CreateFolder",
     keySequence: "Ctrl+Alt+F",
     execute: function() {
     	CreateEventFolder();

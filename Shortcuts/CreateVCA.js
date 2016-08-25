@@ -1,5 +1,5 @@
 studio.menu.addMenuItem({
-    name: "CreateVCA",
+    name: "Shortcuts\\CreateVCA",
     keySequence: "Ctrl+Alt+V",
     execute: function() {
     	CreateVCA();
