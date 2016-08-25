@@ -4,4 +4,4 @@ var GetProjectName = function(){
 	var projectNameExt = projectPath.split("/");
 	projectNameExt = projectNameExt.slice(projectNameExt.length - 1);
 	var projectName = projectNameExt[0].substring(0, projectNameExt[0].length - 6);
-}
+};
