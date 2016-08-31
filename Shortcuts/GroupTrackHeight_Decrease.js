@@ -15,10 +15,45 @@ var GroupTrackHeight_Decrease = function()
 {
 	selectedEvent = studio.window.browserCurrent()
 	tracksList = selectedEvent.groupTracks
-	for (i = 0; i < tracksList.length; i++)
-	{
-		tracksList[i].uiTrackHeight -= 20;
-		if (tracksList[i].uiTrackHeight < 28)
-			tracksList[i].uiTrackHeight = 28;
-	}
+
+    if (selectedEvent.selectables.length > 0)
+    {
+        if(selectedEvent.selectables[0].isOfType("GroupTrack") || selectedEvent.selectables[0].isOfType("MasterTrack"))
+        {
+            tracksList = selectedEvent.selectables;
+                for (i = 0; i < tracksList.length; i++)
+                {
+                    tracksList[i].uiTrackHeight -= 20;
+                    if (tracksList[i].uiTrackHeight < 28)
+                        tracksList[i].uiTrackHeight = 28;
+                }
+        }
+
+        else
+        {
+            for (i = 0; i < tracksList.length; i++)
+            {
+                tracksList[i].uiTrackHeight -= 20;
+                if (tracksList[i].uiTrackHeight < 28)
+                    tracksList[i].uiTrackHeight = 28;
+            }
+            selectedEvent.masterTrack.uiTrackHeight -= 20;
+            if (selectedEvent.masterTrack.uiTrackHeight < 28)
+                selectedEvent.masterTrack.uiTrackHeight = 28;
+        }
+    }
+
+    else
+    {
+        for (i = 0; i < tracksList.length; i++)
+        {
+            tracksList[i].uiTrackHeight -= 20;
+            if (tracksList[i].uiTrackHeight < 28)
+                tracksList[i].uiTrackHeight = 28;
+        }
+        selectedEvent.masterTrack.uiTrackHeight -= 20;
+            if (selectedEvent.masterTrack.uiTrackHeight < 28)
+                selectedEvent.masterTrack.uiTrackHeight = 28;
+    }
+
 };
