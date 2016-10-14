@@ -1,3 +1,11 @@
+/* -------------------------------------------
+	FMOD Studio Script:
+	Create New Group Track
+
+	Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
     name: "Shortcuts\\CreateGroupTrack",
     keySequence: "Ctrl+Alt+G",

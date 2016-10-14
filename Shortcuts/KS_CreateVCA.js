@@ -1,15 +1,24 @@
+/* -------------------------------------------
+	FMOD Studio Script:
+	Create New VCA
+
+	Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateFolder",
-    keySequence: "Ctrl+Alt+F",
+    name: "Shortcuts\\CreateVCA",
+    keySequence: "Ctrl+Alt+V",
     execute: function() {
-    	CreateEventFolder();
+    	CreateVCA();
     },
 });
 
-var CreateEventFolder = function(){
-    	var newFolder = studio.project.create("EventFolder");
-    	newFolder.folder = studio.project.workspace.masterEventFolder;
-    	newFolder.name = SetDefaultName(newFolder, newFolder.folder.items);
+var CreateVCA = function()
+{
+	var newVCA = studio.project.create("MixerVCA");
+	newVCA.mixer = studio.project.workspace.mixer;
+	newVCA.name = SetDefaultName(newVCA, newVCA.mixer.vca);
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){

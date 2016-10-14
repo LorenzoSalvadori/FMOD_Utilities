@@ -1,16 +1,24 @@
+/* -------------------------------------------
+	FMOD Studio Script:
+	Create New Mixer Group Track
+
+	Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateEvent",
-    keySequence: "Ctrl+Alt+E",
+    name: "Shortcuts\\CreateMixerGroup",
+    keySequence: "Ctrl+Alt+M",
     execute: function() {
-    	CreateEvent();
+    	CreateMixerGroup();
     },
 });
 
-var CreateEvent = function(){
-		var newEvent = studio.project.create("Event");
-		newEvent.folder = studio.project.workspace.masterEventFolder;
-		newEvent.name = SetDefaultName(newEvent, newEvent.folder.items);
-		newEvent.mixerInput.Output = studio.project.workspace.mixer.masterBus;
+var CreateMixerGroup = function()
+{
+	var newGroup = studio.project.create("MixerGroup");
+	//newGroup.output = studio.project.workspace.mixer.masterBus.input;
+	newGroup.name = SetDefaultName(newGroup, newGroup.output.input);
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){

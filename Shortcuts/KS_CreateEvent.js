@@ -1,23 +1,24 @@
 /* -------------------------------------------
-   FMOD Studio Script
-   This script creates a "MixerGroup" object.
-   Author: Lorenzo Salvadori
+	FMOD Studio Script:
+	Create New Event
+
+	Author: Lorenzo Salvadori
    -------------------------------------------
- */
+*/
 
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateMixerGroup",
-    keySequence: "Ctrl+Alt+M",
+    name: "Shortcuts\\CreateEvent",
+    keySequence: "Ctrl+Alt+E",
     execute: function() {
-    	CreateMixerGroup();
+    	CreateEvent();
     },
 });
 
-var CreateMixerGroup = function()
-{
-	var newGroup = studio.project.create("MixerGroup");
-	//newGroup.output = studio.project.workspace.mixer.masterBus.input;
-	newGroup.name = SetDefaultName(newGroup, newGroup.output.input);
+var CreateEvent = function(){
+		var newEvent = studio.project.create("Event");
+		newEvent.folder = studio.project.workspace.masterEventFolder;
+		newEvent.name = SetDefaultName(newEvent, newEvent.folder.items);
+		newEvent.mixerInput.Output = studio.project.workspace.mixer.masterBus;
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){

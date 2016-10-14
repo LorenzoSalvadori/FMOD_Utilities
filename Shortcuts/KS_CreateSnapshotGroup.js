@@ -1,16 +1,24 @@
+/* -------------------------------------------
+	FMOD Studio Script:
+	Create New Snapshot Group
+
+	Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateVCA",
-    keySequence: "Ctrl+Alt+V",
+    name: "Shortcuts\\CreateSnapshotGroup",
+    keySequence: "Ctrl+Alt+L",
     execute: function() {
-    	CreateVCA();
+    	CreateSnapshotGroup();
     },
 });
 
-var CreateVCA = function()
+var CreateSnapshotGroup = function()
 {
-	var newVCA = studio.project.create("MixerVCA");
-	newVCA.mixer = studio.project.workspace.mixer;
-	newVCA.name = SetDefaultName(newVCA, newVCA.mixer.vca);
+	var newSnapshotGroup = studio.project.create("SnapshotGroup");
+	newSnapshotGroup.folder = studio.project.workspace.mixer.snapshotList;
+	newSnapshotGroup.name = SetDefaultName(newSnapshotGroup, newSnapshotGroup.folder.items);
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){

@@ -1,23 +1,23 @@
 /* -------------------------------------------
-   FMOD Studio Script
-   This script creates a "MixerReturn" object.
-   Author: Lorenzo Salvadori
+	FMOD Studio Script:
+	Create New Bank
+
+	Author: Lorenzo Salvadori
    -------------------------------------------
- */
+*/
 
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateSnapshotGroup",
-    keySequence: "Ctrl+Alt+L",
+    name: "Shortcuts\\CreateBank",
+    keySequence: "Ctrl+B",
     execute: function() {
-    	CreateSnapshotGroup();
+    	CreateBank();
     },
 });
 
-var CreateSnapshotGroup = function()
-{
-	var newSnapshotGroup = studio.project.create("SnapshotGroup");
-	newSnapshotGroup.folder = studio.project.workspace.mixer.snapshotList;
-	newSnapshotGroup.name = SetDefaultName(newSnapshotGroup, newSnapshotGroup.folder.items);
+var CreateBank = function(){
+		var newBank = studio.project.create("Bank");
+		newBank.folder = studio.project.workspace.masterBankFolder;
+		newBank.name = SetDefaultName(newBank, newBank.folder.items);
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){

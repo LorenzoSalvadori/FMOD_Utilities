@@ -1,3 +1,11 @@
+/* -------------------------------------------
+	FMOD Studio Script:
+	Create New Parameter
+
+	Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
     name: "Shortcuts\\CreateParameter",
     keySequence: "Ctrl+Alt+P",

@@ -1,8 +1,16 @@
+/* -------------------------------------------
+    FMOD Studio Script:
+    Decrease Group Track Height
+
+    Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
     name: "Shortcuts\\GroupTrackHeight_Decrease",
     keySequence: "Ctrl+Alt+D",
     execute: function() {
-    	if(studio.window.browserCurrent() && studio.window.browserCurrent().isOfType("Event")){
+    	if(studio.window.browserCurrent() && studio.window.browserCurrent().isOfExactType("Event")){
     		GroupTrackHeight_Decrease();
     	}
     	else {

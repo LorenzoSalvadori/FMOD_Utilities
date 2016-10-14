@@ -1,15 +1,23 @@
+/* -------------------------------------------
+	FMOD Studio Script:
+	Create New Folder
+
+	Author: Lorenzo Salvadori
+   -------------------------------------------
+*/
+
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateBank",
-    keySequence: "Ctrl+B",
+    name: "Shortcuts\\CreateFolder",
+    keySequence: "Ctrl+Alt+F",
     execute: function() {
-    	CreateBank();
+    	CreateEventFolder();
     },
 });
 
-var CreateBank = function(){
-		var newBank = studio.project.create("Bank");
-		newBank.folder = studio.project.workspace.masterBankFolder;
-		newBank.name = SetDefaultName(newBank, newBank.folder.items);
+var CreateEventFolder = function(){
+    	var newFolder = studio.project.create("EventFolder");
+    	newFolder.folder = studio.project.workspace.masterEventFolder;
+    	newFolder.name = SetDefaultName(newFolder, newFolder.folder.items);
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){

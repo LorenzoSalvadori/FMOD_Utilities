@@ -1,22 +1,26 @@
 /* -------------------------------------------
-   FMOD Studio Script
-   This script creates a "MixerReturn" object.
-   Author: Lorenzo Salvadori
+	FMOD Studio Script:
+	Create New Snapshot
+
+	Author: Lorenzo Salvadori
    -------------------------------------------
- */
+*/
 
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateMixerReturn",
-    keySequence: "Ctrl+Alt+R",
+    name: "Shortcuts\\CreateSnapshot",
+    keySequence: "Ctrl+Alt+S",
     execute: function() {
-    	CreateMixerReturn();
+    	CreateSnapshot();
     },
 });
 
-var CreateMixerReturn = function()
+var CreateSnapshot = function()
 {
-	var newReturn = studio.project.create("MixerReturn");
-	newReturn.name = SetDefaultName(newReturn, newReturn.output.input);
+	var newSnapshot = studio.project.create("Snapshot");
+	newSnapshot.mixer = studio.project.workspace.mixer;
+	newSnapshot.folder = studio.project.workspace.mixer.snapshotList;
+	newSnapshot.behaviour = 0;		// 0 is for overriding, 1 is for blending
+	newSnapshot.name = SetDefaultName(newSnapshot, newSnapshot.folder.items);
 };
 
 var SetDefaultName = function(objectInstance, objectContainer){
