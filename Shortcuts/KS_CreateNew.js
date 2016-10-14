@@ -1,6 +1,6 @@
 /* -------------------------------------------
 	FMOD Studio Script:
-	Create New Snapshot Group
+	Create New Bank
 
 	Author: Lorenzo Salvadori
    -------------------------------------------
@@ -9,9 +9,13 @@
 var CreateModule = studio._internal.require('AtomicPropositions/AP_CreateNew.js');
 
 studio.menu.addMenuItem({
-    name: "Shortcuts\\CreateSnapshotGroup",
-    keySequence: "Ctrl+Alt+L",
+    name: "Shortcuts\\CreateBank",
+    keySequence: "Ctrl+Shift+N",
     execute: function() {
-    	CreateModule.CreateSnapshotGroup();
+    	CreateNew();
     },
 });
+
+var CreateNew = function(){
+
+};
