@@ -6,7 +6,6 @@
    -------------------------------------------
 */
 
-
 var MyModule = studio._internal.require('AP_SetDefaultName.js');
 
 module.exports = {
